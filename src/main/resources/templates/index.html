@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/navbar :: head}">
+    <title>TecMerch - Las mejores computadoras a los mejores precios</title>
+</head>
+<body>
+<div th:replace="~{layout/navbar :: navbar}"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-background"></div>  <!-- Capa para el fondo con animaciones -->
+    <div class="hero-content">
+        <h1>Las mejores computadoras <span class="resaltado">a los mejores precios</span></h1>
+        <p>Encuentra laptops, desktops y accesorios de las mejores marcas</p>
+        <a th:href="@{/productos}" class="btn-primario">Ver Productos</a>
+    </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="beneficios">
+    <div class="beneficio">
+        <i class="bi bi-truck"></i>
+        <h3>Envío Gratis</h3>
+        <p>En compras mayores a S/.500</p>
+    </div>
+    <div class="beneficio">
+        <i class="bi bi-shield-check"></i>
+        <h3>Garantía</h3>
+        <p>Hasta 3 años de garantía</p>
+    </div>
+    <div class="beneficio">
+        <i class="bi bi-headset"></i>
+        <h3>Soporte 24/7</h3>
+        <p>Asistencia técnica siempre</p>
+    </div>
+    <div class="beneficio">
+        <i class="bi bi-credit-card"></i>
+        <h3>Financiamiento</h3>
+        <p>Hasta 24 meses sin intereses</p>
+    </div>
+</section>
+
+<!-- CATEGORÍAS CON SUBCATEGORÍAS -->
+<!-- CATEGORÍAS CON IMÁGEN PRINCIPAL POR CATEGORÍA -->
+<section class="categorias">
+    <h2>Explora por Categorías</h2>
+    <div class="grid-categorias">
+
+        <!-- Laptops -->
+        <div class="categoria-principal">
+            <img th:src="@{/img/ASUS ROG Strix G15 Gaming.jpg}" alt="Laptops Gaming" class="img-categoria">
+            <div class="contenido-categoria">
+                <i class="bi bi-laptop"></i>
+                <h3>Laptops</h3>
+                <ul class="subcategorias">
+                    <li><a th:href="@{/productos?sub=laptops-oficina}">Laptops de Oficina</a></li>
+                    <li><a th:href="@{/productos?sub=laptops-gaming}">Laptops Gaming</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PC de Escritorio -->
+        <div class="categoria-principal">
+            <img th:src="@{/img/Custom Gaming Desktop RTX 4080.jpg}" alt="PCs Gaming" class="img-categoria">
+            <div class="contenido-categoria">
+                <i class="bi bi-pc-display-horizontal"></i>
+                <h3>PC de Escritorio</h3>
+                <ul class="subcategorias">
+                    <li><a th:href="@{/productos?sub=pcs-oficina}">PCs de Oficina</a></li>
+                    <li><a th:href="@{/productos?sub=pcs-gaming}">PCs Gaming</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Gaming -->
+        <div class="categoria-principal">
+            <img th:src="@{/img/Gaming perifericos.jpg}" alt="Gaming Periféricos" class="img-categoria">
+            <div class="contenido-categoria">
+                <i class="bi bi-controller"></i>
+                <h3>Gaming</h3>
+                <ul class="subcategorias">
+                    <li><a th:href="@{/productos?sub=teclados-gaming}">Teclados Gaming</a></li>
+                    <li><a th:href="@{/productos?sub=mouse-gaming}">Mouse Gaming</a></li>
+                    <li><a th:href="@{/productos?sub=audifonos-gaming}">Audífonos Gaming</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Accesorios -->
+        <div class="categoria-principal">
+            <img th:src="@{/img/Accesorios.jpg}" alt="Accesorios" class="img-categoria">
+            <div class="contenido-categoria">
+                <i class="bi bi-plug"></i>
+                <h3>Accesorios</h3>
+                <ul class="subcategorias">
+                    <li><a th:href="@{/productos?sub=cables}">Cables</a></li>
+                    <li><a th:href="@{/productos?sub=adaptadores}">Adaptadores</a></li>
+                    <li><a th:href="@{/productos?sub=mochilas}">Mochilas</a></li>
+                    <li><a th:href="@{/productos?sub=soportes}">Soportes</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRODUCTOS DESTACADOS -->
+<section class="destacados">
+    <h2>Productos Destacados</h2>
+    <p>Los equipos más populares y mejor valorados</p>
+    <div class="grid-productos">
+        <div class="tarjeta-producto">
+            <div class="etiqueta">Oferta</div>
+            <img th:src="@{/img/MacBook Pro 16M3 Max.jpg}" alt="MacBook Pro">
+            <h3>MacBook Pro 16” M3 Max</h3>
+            <p class="marca">Apple</p>
+            <p class="precio">S/.2499 <span class="precio-anterior">S/.2899</span></p>
+            <button class="btn-secundario">Detalles</button>
+            <button class="btn-primario">Añadir</button>
+        </div>
+        <!-- Agrega más productos aquí -->
+    </div>
+    <a th:href="@{/productos}" class="btn-ver-todo">Ver Todos los Productos</a>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="suscripcion">
+    <h2>¡Mantente Actualizado!</h2>
+    <p>Recibe ofertas exclusivas y las últimas noticias tecnológicas</p>
+    <form>
+        <input type="email" placeholder="Tu correo">
+        <button type="submit">Suscribirme</button>
+    </form>
+</section>
+</body>
+</html>

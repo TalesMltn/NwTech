@@ -1,0 +1,81 @@
+.login-body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/img/fight.jpg') center/cover no-repeat fixed;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-header i {
+    font-size: 4rem;
+    color: #00aaff;
+}
+
+.login-header h1 {
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+
+.login-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: #00aaff;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 18px 18px 18px 55px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.btn-login {
+    background: #00aaff;
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #0088cc;
+    transform: scale(1.05);
+}

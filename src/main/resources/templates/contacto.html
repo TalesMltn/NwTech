@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{layout/navbar :: head}" />
+    <title>Contacto - TecMerch</title>
+    <link rel="stylesheet" th:href="@{/css/contacto.css}">
+</head>
+<body class="contact-body">
+<div th:replace="~{layout/navbar :: navbar}"></div>
+
+<section class="contact-section">
+    <div class="contact-card">
+        <h1>Contáctanos</h1>
+        <p>¿Tienes dudas o consultas? Completa el formulario.</p>
+
+        <form th:action="@{/contacto}" method="post" class="contact-form">
+            <div class="input-group">
+                <i class="bi bi-person-fill"></i>
+                <input type="text" name="nombre" placeholder="Nombre completo" required>
+            </div>
+            <div class="input-group">
+                <i class="bi bi-envelope-fill"></i>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+            </div>
+            <div class="input-group">
+                <i class="bi bi-tag-fill"></i>
+                <input type="text" name="asunto" placeholder="Asunto" required>
+            </div>
+            <div class="input-group">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+                <i class="bi bi-send-fill"></i> Enviar Mensaje
+            </button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

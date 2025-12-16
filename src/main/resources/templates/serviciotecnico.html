@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{layout/navbar :: head}" />
+    <title>Servicio Técnico - TecMerch</title>
+    <link rel="stylesheet" th:href="@{/css/serviciotecnico.css}">
+</head>
+<body class="servicio-body">
+
+<div th:replace="~{layout/navbar :: navbar}"></div>
+
+<!-- Formulario completo con título y descripción dentro -->
+<section class="servicio-form-section">
+    <div class="form-container">
+
+        <h1 class="main-title">Servicio Técnico de Confianza</h1>
+        <p class="main-subtitle">Reparaciones rápidas y confiables. ¡Tu satisfacción es nuestra prioridad!</p>
+
+        <h2 class="form-title">Reserva tu Cita</h2>
+
+        <form th:action="@{/serviciotecnico}" method="post" class="servicio-form-grid">
+
+            <!-- Columna izquierda -->
+            <div class="form-column">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="987654321" required>
+
+                <label for="equipo">Equipo / Modelo</label>
+                <input type="text" id="equipo" name="equipo" placeholder="Ej: ASUS ROG Strix" required>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="form-column">
+                <label for="fecha">Fecha preferida</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="hora">Hora preferida</label>
+                <input type="time" id="hora" name="hora" required>
+
+                <label for="detalle">Describe el problema</label>
+                <textarea id="detalle" name="detalle" rows="6" placeholder="Ej: La laptop no enciende..." required></textarea>
+            </div>
+
+            <!-- Botón único -->
+            <button type="submit" class="btn-submit-form">
+                <i class="bi bi-calendar-check"></i> Reservar Cita
+            </button>
+
+        </form>
+
+        <p class="mensaje-exito" th:if="${mensaje}" th:text="${mensaje}"></p>
+    </div>
+</section>
+
+</body>
+</html>

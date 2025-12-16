@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{layout/navbar :: head}" />
+    <title>Productos - TecMerch</title>
+    <link rel="stylesheet" th:href="@{/css/Productos.css}">
+</head>
+<body class="productos-body">
+<div th:replace="~{layout/navbar :: navbar}"></div>
+
+<section class="productos">
+    <h1>Nuestros Productos</h1>
+    <p>Explora nuestra selección de equipos de última generación</p>
+
+    <!-- Laptops -->
+    <div class="seccion-categoria">
+        <h2><i class="bi bi-laptop"></i> Laptops</h2>
+        <div class="grid-productos">
+            <div class="tarjeta-producto" th:if="${param.sub == null or param.sub == 'laptops-oficina'}">
+                <img th:src="@{/img/Dell XPS 15 OLED.jpg}" alt="Dell XPS">
+                <h3>Dell XPS 15 OLED</h3>
+                <p class="marca">Dell</p>
+                <p class="precio">$1599</p>
+                <button class="btn-primario">Añadir al Carrito</button>
+            </div>
+            <div class="tarjeta-producto" th:if="${param.sub == null or param.sub == 'laptops-gaming'}">
+                <img th:src="@{/img/ASUS ROG Strix G15 Gaming.jpg}" alt="ASUS ROG">
+                <h3>ASUS ROG Strix G15</h3>
+                <p class="marca">ASUS</p>
+                <p class="precio">$1799</p>
+                <button class="btn-primario">Añadir al Carrito</button>
+            </div>
+            <div class="tarjeta-producto" th:if="${param.sub == null or param.sub == 'laptops-gaming'}">
+                <img th:src="@{/img/MacBook Pro 16M3 Max.jpg}" alt="MacBook Pro">
+                <h3>MacBook Pro 16” M3 Max</h3>
+                <p class="marca">Apple</p>
+                <p class="precio">S/.2499</p>
+                <button class="btn-primario">Añadir al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PC de Escritorio -->
+    <div class="seccion-categoria">
+        <h2><i class="bi bi-pc-display-horizontal"></i> PC de Escritorio</h2>
+        <div class="grid-productos">
+            <div class="tarjeta-producto" th:if="${param.sub == null or param.sub == 'pcs-gaming'}">
+                <img th:src="@{/img/Custom Gaming Desktop RTX 4080.jpg}" alt="PC Gamer">
+                <h3>Custom Gaming RTX 4080</h3>
+                <p class="marca">Custom</p>
+                <p class="precio">$2999</p>
+                <button class="btn-primario">Añadir al Carrito</button>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

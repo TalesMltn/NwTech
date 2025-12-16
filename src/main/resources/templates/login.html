@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{layout/navbar :: head}" />
+    <title>Login - TecMerch</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body class="login-body">
+<div th:replace="~{layout/navbar :: navbar}"></div>
+
+<section class="login-section">
+    <div class="login-card">
+        <div class="login-header">
+            <i class="bi bi-laptop"></i>
+            <h1>TecMerch</h1>
+        </div>
+        <h2>Iniciar Sesión</h2>
+
+        <div class="alert-error" th:if="${param.error}">
+            DNI o contraseña incorrectos
+        </div>
+
+        <form th:action="@{/login}" method="post" class="login-form">
+            <div class="input-group">
+                <i class="bi bi-person-badge-fill"></i>
+                <input type="text" name="username" placeholder="Ingresa tu DNI" required autofocus>
+            </div>
+            <div class="input-group">
+                <i class="bi bi-lock-fill"></i>
+                <input type="password" name="password" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <button type="submit" class="btn-login">
+                <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+            </button>
+        </form>
+
+        <p class="info-text">Solo personal autorizado</p>
+    </div>
+</section>
+</body>
+</html>

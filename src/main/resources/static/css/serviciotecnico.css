@@ -1,0 +1,142 @@
+.servicio-body {
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+    url('../img/fight.jpg') center/cover no-repeat fixed;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Sección con fondo del técnico */
+.servicio-form-section {
+    padding: 80px 20px;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('../img/servicio-tecnico.jpg') center/cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta glass - compacta incluso en zoom 100% */
+.form-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 50px 40px;          /* Padding moderado */
+    width: 100%;
+    max-width: 900px;            /* ← Clave: no más ancha que 900px */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+/* Título principal */
+.main-title {
+    font-size: 2.5rem;           /* Más pequeño que antes para zoom 100% */
+    margin-bottom: 12px;
+}
+
+/* Subtítulo */
+.main-subtitle {
+    font-size: 1.15rem;
+    margin-bottom: 45px;
+    opacity: 0.9;
+}
+
+/* Título del formulario */
+.form-title {
+    font-size: 2.1rem;
+    margin-bottom: 35px;
+}
+
+/* Grid 2 columnas */
+.servicio-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 35px;
+}
+
+/* Columnas */
+.form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-column label {
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.form-column input,
+.form-column textarea {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.form-column input:focus,
+.form-column textarea:focus {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.form-column textarea {
+    border-radius: 25px;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-column input::placeholder,
+.form-column textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Botón */
+.btn-submit-form {
+    grid-column: 1 / -1;
+    background: #00aaff;
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all 0.4s;
+}
+
+.btn-submit-form:hover {
+    background: #0088cc;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 170, 255, 0.4);
+}
+
+/* Mensaje éxito */
+.mensaje-exito {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    color: #90ee90;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 868px) {
+    .servicio-form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-container {
+        padding: 40px 25px;
+        margin: 0 10px;
+        max-width: 95%;
+    }
+    .main-title {
+        font-size: 2.2rem;
+    }
+    .form-title {
+        font-size: 1.9rem;
+    }
+}

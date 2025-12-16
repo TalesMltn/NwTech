@@ -1,0 +1,93 @@
+.contact-body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('../img/fight.jpg') center/cover no-repeat fixed;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px; /* Más espacio vertical para que el título no se pierda */
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 45px 35px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+
+    /* ¡Clave para que se vea como en zoom 75%! */
+    width: 100%;
+    max-width: 420px;        /* ← Bajamos de 480px a 420px para que sea más compacta */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-card h1 {
+    font-size: 2.3rem;       /* Un poco más pequeño para mejor proporción */
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #00aaff;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 16px 16px 16px 55px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+}
+
+.input-group textarea {
+    min-height: 120px;
+    border-radius: 30px;
+    resize: vertical;
+}
+
+.btn-submit {
+    background: #00aaff;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #0088cc;
+    transform: scale(1.05);
+}
