@@ -18,7 +18,7 @@ public class SecurityConfig {
                         // Páginas públicas (ajusta según tus rutas reales)
                         .requestMatchers("/", "/home", "/productos", "/productos/**",
                                 "/contacto", "/contacto/**",
-                                "/servicio-tecnico", "/servicio-tecnico/**").permitAll()
+                                "/serviciotecnico", "/serviciotecnico/**").permitAll()
 
                         // Login
                         .requestMatchers("/login", "/login/**").permitAll()
