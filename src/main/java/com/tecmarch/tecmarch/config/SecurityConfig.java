@@ -15,16 +15,19 @@ public class SecurityConfig {
                         // Recursos estáticos
                         .requestMatchers("/css/**", "/js/**", "/img/**", "/fonts/**", "/webjars/**").permitAll()
 
-                        // Páginas públicas (ajusta según tus rutas reales)
+                        // Páginas públicas
                         .requestMatchers("/", "/home", "/productos", "/productos/**",
                                 "/contacto", "/contacto/**",
                                 "/serviciotecnico", "/serviciotecnico/**").permitAll()
 
-                        // Login
-                        .requestMatchers("/login", "/login/**").permitAll()
+                        // Login y logout
+                        .requestMatchers("/login", "/login/**", "/logout").permitAll()
 
-                        // Página de error (importante para evitar loops en algunos casos)
+                        // Página de error
                         .requestMatchers("/error").permitAll()
+
+                        // Panel administrativo: SOLO usuarios con rol ADMIN
+                        .requestMatchers("/admin/**", "/admin/dashboard").hasRole("ADMIN")
 
                         // Todo lo demás requiere autenticación
                         .anyRequest().authenticated()
@@ -32,7 +35,7 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/dashboard", true)  // Cambia si tu dashboard tiene otro nombre
+                        .defaultSuccessUrl("/admin/dashboard", true)  // ← Va directo al dashboard admin
                         .failureUrl("/login?error")
                         .permitAll()
                 )
